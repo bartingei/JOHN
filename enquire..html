@@ -342,7 +342,7 @@ form label{
          </div>
      </nav>-->
     
-    <form action="https://formspree.io/f/mkgrzbrj"method="POST">
+     <form action="https://formspree.io/f/mkgrzbrj"method="POST">
         <div class="homelink">
             <a href="index.html" >Back to Home Page</a>
         </div>
@@ -351,15 +351,16 @@ form label{
         </div>
         <div class="details">
             <label for="Name">Name:</label>
-            <input type="text" id="Name" name="Name">
+            <input type="text" id="Name" name="Name" required>
         </div>
         <div class="details ">
             <label for="Email: ">Email: </label>
-            <input type="text" id="Email" >
+            <input type="text"name="email" id="Email" required>
         </div>
+
         <div class="details">
             <label for="details">Subject: </label>
-            <input type="text" id="Subject" name="Subject">
+            <input type="text" id="Subject" name="Subject" required>
         </div>
         <div class="details">
             <label for="message">Message</label>
@@ -367,7 +368,7 @@ form label{
         </div>
         <form>
             <div class="details">
-                <button type="send" onclick="handleSubmit()">Submit</button>
+                <button type="submit" onclick="handleSubmit()">Send</button>
             </div>
         </form>
         <!--<footer>
@@ -390,9 +391,14 @@ form label{
          </footer>-->
         
         <script>
-            function handleSubmit() {
-                alert("Thanks for your submission!");
-                document.getElementById("contact").reset();
+            function handleSubmit(event) {
+               event.preventDefault();
+               alert("Thanks for your submission!");
+
+               document.getElementById("contact").reset();
+
+               window.location.href = "index.html";
+
             }
         </script>
 </body>
